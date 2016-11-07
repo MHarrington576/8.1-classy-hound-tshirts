@@ -22,7 +22,7 @@ var ShirtDisplay = React.createClass({
 
             <form>
               <div className="form-group">
-                <input type="number" id="select-quantity" placeholder="0"></input>
+                <input type="number" id="select-quantity" placeholder="1"></input>
                 <button className="btn btn-primary" onClick={function(){self.props.addToCart(item)}}>Add to Cart</button>
               </div>
             </form>
@@ -43,9 +43,9 @@ var StoreContainer = React.createClass({
     orderCollection.add(cartData);
 
     shirtListing.add([
-      {name: 'Test 1', price: 18, img: '...'},
-      {name: 'Test 2', price: 21, img: '...'},
-      {name: 'Test 3', price: 16, img: '...'}
+      {name: 'TIY T-Shirt', price: 18, img: 'https://d12oh4b377r949.cloudfront.net/places/a6388eb6-70fc-4cbd-a4a9-4227ea7cf262/80810370-a979-4985-9e3f-648f2f223136_logo'},
+      {name: 'Google T-Shirt', price: 21, img: 'https://pbs.twimg.com/profile_images/762369348300251136/5Obhonwa.jpg'},
+      {name: 'W T-Shirt', price: 16, img: 'http://periodictable.com/Samples/074.5/s13.JPG'}
     ]);
 
     return {
@@ -57,7 +57,6 @@ var StoreContainer = React.createClass({
   addToCart: function(){
     var orderCollection = this.state.orderCollection;
     var orderItemData = item.toJSON();
-    // delete item.cid;
     orderCollection.add([orderItemData]);
     this.updateCart();
     this.setState({orderCollection: orderCollection});

@@ -6,7 +6,7 @@ var Shirt = Backbone.Model.extend({
 });
 
 var ShirtCollection = Backbone.Collection.extend({
-  model: ShirtListing
+  model: Shirt
 });
 
 var CartItem = Backbone.Model.extend({
@@ -15,8 +15,6 @@ var CartItem = Backbone.Model.extend({
 
 var CartItemCollection = Backbone.Collection.extend({
   model: CartItem
-  // ,
-  // localStorage: new Backbone.localStorage('shirtOrder')
 });
 
 var Order = Backbone.Model.extend({

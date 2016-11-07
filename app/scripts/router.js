@@ -11,8 +11,6 @@ var AppRouter = Backbone.Router.extend({
     'cart/': 'cart'
   },
 
-  // initialize ???
-
   index: function(){
     ReactDOM.render(
       React.createElement(StoreContainer, {router: this}),
