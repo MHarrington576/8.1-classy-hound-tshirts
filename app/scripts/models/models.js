@@ -1,11 +1,11 @@
 var Backbone = require('backbone');
 Backbone.localStorage = require('backbone.localstorage');
 
-var ShirtListing = Backbone.Model.extend({
+var Shirt = Backbone.Model.extend({
   idAttribute: '_id'
 });
 
-var ShirtListingCollection = Backbone.Collection.extend({
+var ShirtCollection = Backbone.Collection.extend({
   model: ShirtListing
 });
 
@@ -28,8 +28,8 @@ var OrderCollection = Backbone.Collection.extend({
 });
 
 module.exports = {
-  ShirtListing: ShirtListing,
-  ShirtListingCollection: ShirtListingCollection,
+  Shirt: Shirt,
+  ShirtCollection: ShirtCollection,
   CartItem: CartItem,
   CartItemCollection: CartItemCollection,
   Order: Order,
