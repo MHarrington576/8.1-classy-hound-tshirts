@@ -66,7 +66,7 @@ var CartContainer = React.createClass({
     var orderCollection = this.state.orderCollection;
     orderCollection.remove(item);
     this.updateCart();
-    this.setState({'orderCollection: orderCollection'});
+    this.setState({'orderCollection': orderCollection});
   },
 
   updateCart: function(){
