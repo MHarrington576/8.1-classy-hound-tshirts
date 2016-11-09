@@ -11,26 +11,31 @@ var ShirtDisplay = React.createClass({
     var self = this;
     var shirtListing = this.props.shirtListing.map(function(item){
       return (
-        <div key={item.get('shirt')} className="col-md-4">
+        <div key={item.get('name')} className="col-md-4">
           <div className="shirt-tile">
+           <img src={item.get('img')} />
+           <div className="caption">
+             <span className="shirt-name">{item.get('name')}</span>
+             <span className="price">{item.get('price')}</span>
+           </div>
 
-            <img src={item.get('img')} />
-            <div className="caption">
-              <span className="shirt-name">{item.get('name')}</span>
-              <span className="price">{item.get('price')}</span>
-            </div>
-
-            <form>
-              <div className="form-group">
-                <input type="number" id="select-quantity" placeholder="1"></input>
-                <button className="btn btn-primary" onClick={function(){self.props.addToCart(item)}}>Add to Cart</button>
-              </div>
-            </form>
+           <form>
+             <div className="form-group">
+               <input type="number" id="select-quantity" placeholder="1"></input>
+               <button className="btn btn-primary" onClick={function(){self.props.addToCart(item)}}>Add to Cart</button>
+             </div>
+           </form>
 
           </div>
         </div>
       )
     });
+
+    return (
+      <div>
+        {shirtListing}
+      </div>
+    )
   }
 });
 

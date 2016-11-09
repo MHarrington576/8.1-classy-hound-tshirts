@@ -15,6 +15,7 @@ var OrderComponent = React.createClass({
         <tr key={item.id}>
           <td>{item.name}</td>
           <td>{item.price}</td>
+          <td>{item.size}</td>
           <td>1</td>
           <td>00:00</td>
           <td><button className="btn btn-danger" onClick={function(){self.props.removeItem(item)}}>Remove</button></td>
@@ -28,7 +29,9 @@ var OrderComponent = React.createClass({
           <tr>
             <th>Item</th>
             <th>Price</th>
+            <th>Size</th>
             <th>Qty</th>
+            <th>Price</th>
             <th>DEAL EXPIRES IN:</th>
           </tr>
         </thead>
