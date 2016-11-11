@@ -10,7 +10,7 @@ var OrderComponent = React.createClass({
   render: function(){
     var self = this;
 
-    var orderListing = this.props.orders.map(function(item){
+    var orderListing = self.props.orders.map(function(item){
       return (
         <tr key={item.id}>
           <td>{item.name}</td>
@@ -47,7 +47,7 @@ var CartContainer = React.createClass({
   getInitialState: function(){
     var orderCollection = new models.CartItemCollection();
     var inCart = JSON.parse(localStorage.getItem('order'));
-    orderCollection.add(items);
+    orderCollection.add(inCart);
 
     return {
       inCart: inCart,
