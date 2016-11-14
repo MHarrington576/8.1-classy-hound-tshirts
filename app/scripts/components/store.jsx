@@ -11,17 +11,20 @@ var ShirtDisplay = React.createClass({
     var self = this;
     var shirtListing = this.props.shirtListing.map(function(item){
       return (
-        <div key={item.get('name')} className="col-md-4">
+        <div key={item.get('name')} className="col-md-4 col-xs-6">
           <div className="shirt-tile">
-           <img src={item.get('img')} />
-           <div className="caption">
-             <span className="shirt-name">{item.get('name')}</span>
-             <span className="price">{item.get('price')}</span>
-           </div>
+            <div className="image-container">
+              <img className="shirt-image" src={item.get('img')} />
+            </div>
+            <div className="caption">
+              <span className="shirt-name">{item.get('name')}</span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+              <span className="price">${item.get('price')}.00</span>
+            </div>
 
            <form>
              <div className="form-group">
-               <input type="number" id="select-quantity" placeholder="1"></input>
+               <input type="number" id="select-quantity" placeholder="How many?"></input>
                <button className="btn btn-primary" onClick={function(){self.props.addToCart(item)}}>Add to Cart</button>
              </div>
            </form>
@@ -48,9 +51,9 @@ var StoreContainer = React.createClass({
     orderCollection.add(cartData);
 
     shirtListing.add([
-      {name: 'TIY T-Shirt', price: 18, img: 'https://d12oh4b377r949.cloudfront.net/places/a6388eb6-70fc-4cbd-a4a9-4227ea7cf262/80810370-a979-4985-9e3f-648f2f223136_logo'},
-      {name: 'Google T-Shirt', price: 21, img: 'https://pbs.twimg.com/profile_images/762369348300251136/5Obhonwa.jpg'},
-      {name: 'W T-Shirt', price: 16, img: 'http://periodictable.com/Samples/074.5/s13.JPG'}
+      {name: 'Starbucks Shirt', price: 18, img: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1017px-Starbucks_Corporation_Logo_2011.svg.png'},
+      {name: 'Google Shirt', price: 21, img: 'https://pbs.twimg.com/profile_images/762369348300251136/5Obhonwa.jpg'},
+      {name: 'Tungsten Shirt', price: 16, img: 'http://periodictable.com/Samples/074.5/s13.JPG'}
     ]);
 
     return {

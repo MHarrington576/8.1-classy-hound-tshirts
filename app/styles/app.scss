@@ -14,6 +14,28 @@ body {
   font-family: 'Proza Libre', serif;
 }
 
+a:hover {
+  text-decoration: none;
+  color: inherit;
+  background-color: lightblue;
+}
+
 h1 {
   font-family: 'Satisfy', cursive;
+  display: inline-block;
+  font-size: 5vw;
+}
+
+.nav-link {
+  margin-left: 1%;
+  border: solid 1px #1C77BA;
+  border-radius: 5px;
+  font-size: 3vw;
+}
+
+.image-container {
+  height: 50%;
+  width: 50%;
+  overflow: hidden;
+  align: center;
 }
